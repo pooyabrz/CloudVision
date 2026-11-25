@@ -1,0 +1,319 @@
+{
+  "architecture": "unet_plus",
+  "model_config": {
+    "width": 16,
+    "dropout": 0.18
+  },
+  "task": "segmentation",
+  "dataset": "cloudcast-gridsat-europe-2017-v1",
+  "manifest_sha256": "b20c112dc572bbdbb7a397a9a2add7b5702d983f2f3c94a4fadc7e39cc1216d0",
+  "preprocessing": {
+    "version": "ir-kelvin-v1",
+    "center": 265.0,
+    "scale": 25.0,
+    "channels": [
+      "irwin_cdr_kelvin",
+      "valid_observation"
+    ],
+    "valid_range": [
+      150.0,
+      350.0
+    ],
+    "ignore": 255
+  },
+  "tile": 64,
+  "training": {
+    "seed": 42,
+    "epochs": 12,
+    "batch_size": 24,
+    "lr": 0.0015,
+    "optimizer": "adamw",
+    "weight_decay": 0.0002,
+    "loss": "combined",
+    "dice_fraction": 0.25,
+    "patience": 4,
+    "scheduler_patience": 2,
+    "clip": 2.0,
+    "amp": true,
+    "workers": 0,
+    "threads": 3,
+    "device": "auto",
+    "augment": {
+      "horizontal": true,
+      "vertical": false,
+      "rotate": false,
+      "crop_probability": 0.2,
+      "minimum_crop": 0.8
+    }
+  },
+  "train_tiles": 708,
+  "val_tiles": 144,
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 1.7639551647638871,
+      "lr": 0.0015,
+      "val_score": 0.1571069197002127,
+      "val_accuracy": 0.3842010498046875
+    },
+    {
+      "epoch": 2,
+      "loss": 1.48611154798734,
+      "lr": 0.0015,
+      "val_score": 0.18067016209439193,
+      "val_accuracy": 0.4116024441189236
+    },
+    {
+      "epoch": 3,
+      "loss": 1.407614146248769,
+      "lr": 0.0015,
+      "val_score": 0.19182323680448873,
+      "val_accuracy": 0.4299028184678819
+    },
+    {
+      "epoch": 4,
+      "loss": 1.3869819782548032,
+      "lr": 0.0015,
+      "val_score": 0.16669955580310766,
+      "val_accuracy": 0.4133656819661458
+    },
+    {
+      "epoch": 5,
+      "loss": 1.3409012778330658,
+      "lr": 0.0015,
+      "val_score": 0.16782007078934788,
+      "val_accuracy": 0.3742947048611111
+    },
+    {
+      "epoch": 6,
+      "loss": 1.3639292211855871,
+      "lr": 0.0015,
+      "val_score": 0.19003201025420835,
+      "val_accuracy": 0.3737979465060764
+    },
+    {
+      "epoch": 7,
+      "loss": 1.3316677384457345,
+      "lr": 0.00075,
+      "val_score": 0.22327545634015436,
+      "val_accuracy": 0.4544881184895833
+    },
+    {
+      "epoch": 8,
+      "loss": 1.3071162700653076,
+      "lr": 0.00075,
+      "val_score": 0.20883470025383338,
+      "val_accuracy": 0.4245690239800347
+    },
+    {
+      "epoch": 9,
+      "loss": 1.3080346948009427,
+      "lr": 0.00075,
+      "val_score": 0.23732956924351928,
+      "val_accuracy": 0.4824252658420139
+    },
+    {
+      "epoch": 10,
+      "loss": 1.3105713169453508,
+      "lr": 0.00075,
+      "val_score": 0.19940447430647176,
+      "val_accuracy": 0.4329121907552083
+    },
+    {
+      "epoch": 11,
+      "loss": 1.2882800465923245,
+      "lr": 0.00075,
+      "val_score": 0.20480995904820426,
+      "val_accuracy": 0.412750244140625
+    },
+    {
+      "epoch": 12,
+      "loss": 1.2967931032180786,
+      "lr": 0.00075,
+      "val_score": 0.21748839530749065,
+      "val_accuracy": 0.4778510199652778
+    }
+  ],
+  "best_epoch": 9,
+  "validation_metric": "miou",
+  "best_validation_score": 0.23732956924351928,
+  "calibration": {
+    "temperature": 0.8011995763438743,
+    "samples": 49152,
+    "split": "val",
+    "before": {
+      "ece": 0.05590880241531219,
+      "nll": 1.3616204261779785,
+      "bins": [
+        {
+          "lower": 0.13333333333333333,
+          "n": 126,
+          "accuracy": 0.18253968253968253,
+          "confidence": 0.19127938151359558
+        },
+        {
+          "lower": 0.2,
+          "n": 5248,
+          "accuracy": 0.2620045731707317,
+          "confidence": 0.24351683259010315
+        },
+        {
+          "lower": 0.26666666666666666,
+          "n": 11845,
+          "accuracy": 0.32925284930350357,
+          "confidence": 0.3002423644065857
+        },
+        {
+          "lower": 0.3333333333333333,
+          "n": 9892,
+          "accuracy": 0.42852810351799436,
+          "confidence": 0.36443623900413513
+        },
+        {
+          "lower": 0.4,
+          "n": 6436,
+          "accuracy": 0.4939403356121815,
+          "confidence": 0.43166109919548035
+        },
+        {
+          "lower": 0.4666666666666667,
+          "n": 4733,
+          "accuracy": 0.5677160363405873,
+          "confidence": 0.4976382851600647
+        },
+        {
+          "lower": 0.5333333333333333,
+          "n": 3553,
+          "accuracy": 0.6509991556431185,
+          "confidence": 0.5649234652519226
+        },
+        {
+          "lower": 0.6,
+          "n": 2790,
+          "accuracy": 0.7372759856630824,
+          "confidence": 0.6317583918571472
+        },
+        {
+          "lower": 0.6666666666666666,
+          "n": 2098,
+          "accuracy": 0.7836034318398475,
+          "confidence": 0.6987949013710022
+        },
+        {
+          "lower": 0.7333333333333333,
+          "n": 1480,
+          "accuracy": 0.8256756756756757,
+          "confidence": 0.7635814547538757
+        },
+        {
+          "lower": 0.8,
+          "n": 747,
+          "accuracy": 0.9103078982597055,
+          "confidence": 0.8291584253311157
+        },
+        {
+          "lower": 0.8666666666666667,
+          "n": 173,
+          "accuracy": 0.9190751445086706,
+          "confidence": 0.8888050317764282
+        },
+        {
+          "lower": 0.9333333333333333,
+          "n": 31,
+          "accuracy": 0.8387096774193549,
+          "confidence": 0.9634634852409363
+        }
+      ]
+    },
+    "after": {
+      "ece": 0.009273881404017924,
+      "nll": 1.344882845878601,
+      "bins": [
+        {
+          "lower": 0.13333333333333333,
+          "n": 15,
+          "accuracy": 0.0,
+          "confidence": 0.18986688554286957
+        },
+        {
+          "lower": 0.2,
+          "n": 1992,
+          "accuracy": 0.24497991967871485,
+          "confidence": 0.2475075125694275
+        },
+        {
+          "lower": 0.26666666666666666,
+          "n": 8276,
+          "accuracy": 0.2821411309811503,
+          "confidence": 0.3035138249397278
+        },
+        {
+          "lower": 0.3333333333333333,
+          "n": 9630,
+          "accuracy": 0.3715472481827622,
+          "confidence": 0.36616820096969604
+        },
+        {
+          "lower": 0.4,
+          "n": 7861,
+          "accuracy": 0.434423101386592,
+          "confidence": 0.4315352737903595
+        },
+        {
+          "lower": 0.4666666666666667,
+          "n": 5700,
+          "accuracy": 0.49701754385964914,
+          "confidence": 0.49842289090156555
+        },
+        {
+          "lower": 0.5333333333333333,
+          "n": 4311,
+          "accuracy": 0.5706332637439109,
+          "confidence": 0.5649648904800415
+        },
+        {
+          "lower": 0.6,
+          "n": 3391,
+          "accuracy": 0.6443526983190799,
+          "confidence": 0.6326188445091248
+        },
+        {
+          "lower": 0.6666666666666666,
+          "n": 2864,
+          "accuracy": 0.7105446927374302,
+          "confidence": 0.6992922425270081
+        },
+        {
+          "lower": 0.7333333333333333,
+          "n": 2306,
+          "accuracy": 0.7827406764960971,
+          "confidence": 0.7654183506965637
+        },
+        {
+          "lower": 0.8,
+          "n": 1690,
+          "accuracy": 0.8076923076923077,
+          "confidence": 0.8305640816688538
+        },
+        {
+          "lower": 0.8666666666666667,
+          "n": 928,
+          "accuracy": 0.8997844827586207,
+          "confidence": 0.8953089118003845
+        },
+        {
+          "lower": 0.9333333333333333,
+          "n": 188,
+          "accuracy": 0.9042553191489362,
+          "confidence": 0.9539879560470581
+        }
+      ]
+    }
+  },
+  "training_seconds": 66.0492281469999,
+  "parameters": 125102,
+  "checkpoint": "best.pt",
+  "checkpoint_sha256": "215cafe4cfb1066e75493b00ff441edfe47b406da2edd327c950ea008460f9c5",
+  "device": "cpu",
+  "torch_version": "2.8.0+cpu"
+}

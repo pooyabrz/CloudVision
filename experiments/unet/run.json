@@ -1,0 +1,319 @@
+{
+  "architecture": "unet",
+  "model_config": {
+    "width": 12,
+    "dropout": 0.1
+  },
+  "task": "segmentation",
+  "dataset": "cloudcast-gridsat-europe-2017-v1",
+  "manifest_sha256": "b20c112dc572bbdbb7a397a9a2add7b5702d983f2f3c94a4fadc7e39cc1216d0",
+  "preprocessing": {
+    "version": "ir-kelvin-v1",
+    "center": 265.0,
+    "scale": 25.0,
+    "channels": [
+      "irwin_cdr_kelvin",
+      "valid_observation"
+    ],
+    "valid_range": [
+      150.0,
+      350.0
+    ],
+    "ignore": 255
+  },
+  "tile": 64,
+  "training": {
+    "seed": 42,
+    "epochs": 12,
+    "batch_size": 24,
+    "lr": 0.0015,
+    "optimizer": "adamw",
+    "weight_decay": 0.0002,
+    "loss": "combined",
+    "dice_fraction": 0.25,
+    "patience": 4,
+    "scheduler_patience": 2,
+    "clip": 2.0,
+    "amp": true,
+    "workers": 0,
+    "threads": 3,
+    "device": "auto",
+    "augment": {
+      "horizontal": true,
+      "vertical": false,
+      "rotate": false,
+      "crop_probability": 0.2,
+      "minimum_crop": 0.8
+    }
+  },
+  "train_tiles": 708,
+  "val_tiles": 144,
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 2.0188956887035046,
+      "lr": 0.0015,
+      "val_score": 0.08937324494498088,
+      "val_accuracy": 0.2626885308159722
+    },
+    {
+      "epoch": 2,
+      "loss": 1.8682415182307615,
+      "lr": 0.0015,
+      "val_score": 0.11510581989470756,
+      "val_accuracy": 0.2864108615451389
+    },
+    {
+      "epoch": 3,
+      "loss": 1.7553373959104894,
+      "lr": 0.0015,
+      "val_score": 0.13972002150308477,
+      "val_accuracy": 0.3511979844835069
+    },
+    {
+      "epoch": 4,
+      "loss": 1.6611240799144162,
+      "lr": 0.0015,
+      "val_score": 0.12791324644524238,
+      "val_accuracy": 0.3878394232855903
+    },
+    {
+      "epoch": 5,
+      "loss": 1.5774634005659718,
+      "lr": 0.0015,
+      "val_score": 0.14146952091028553,
+      "val_accuracy": 0.4021114773220486
+    },
+    {
+      "epoch": 6,
+      "loss": 1.5360341051877555,
+      "lr": 0.0015,
+      "val_score": 0.1654495908678426,
+      "val_accuracy": 0.4334021674262153
+    },
+    {
+      "epoch": 7,
+      "loss": 1.4884427462593983,
+      "lr": 0.0015,
+      "val_score": 0.17785798898012958,
+      "val_accuracy": 0.4279276529947917
+    },
+    {
+      "epoch": 8,
+      "loss": 1.4433965804213185,
+      "lr": 0.0015,
+      "val_score": 0.1739221334771286,
+      "val_accuracy": 0.4344567192925347
+    },
+    {
+      "epoch": 9,
+      "loss": 1.4244196495767367,
+      "lr": 0.0015,
+      "val_score": 0.19120666233668962,
+      "val_accuracy": 0.4543304443359375
+    },
+    {
+      "epoch": 10,
+      "loss": 1.409358976250988,
+      "lr": 0.0015,
+      "val_score": 0.12334240180502434,
+      "val_accuracy": 0.2906561957465278
+    },
+    {
+      "epoch": 11,
+      "loss": 1.3792643284393569,
+      "lr": 0.0015,
+      "val_score": 0.20124853466931683,
+      "val_accuracy": 0.4646589491102431
+    },
+    {
+      "epoch": 12,
+      "loss": 1.3823315612340377,
+      "lr": 0.0015,
+      "val_score": 0.1821504185440488,
+      "val_accuracy": 0.4414384629991319
+    }
+  ],
+  "best_epoch": 11,
+  "validation_metric": "miou",
+  "best_validation_score": 0.20124853466931683,
+  "calibration": {
+    "temperature": 0.6972540209675869,
+    "samples": 49152,
+    "split": "val",
+    "before": {
+      "ece": 0.09570625674283899,
+      "nll": 1.4430869817733765,
+      "bins": [
+        {
+          "lower": 0.13333333333333333,
+          "n": 315,
+          "accuracy": 0.18412698412698414,
+          "confidence": 0.1886395961046219
+        },
+        {
+          "lower": 0.2,
+          "n": 8839,
+          "accuracy": 0.2900780631293133,
+          "confidence": 0.2432836890220642
+        },
+        {
+          "lower": 0.26666666666666666,
+          "n": 16614,
+          "accuracy": 0.4036956783435657,
+          "confidence": 0.2958209216594696
+        },
+        {
+          "lower": 0.3333333333333333,
+          "n": 8054,
+          "accuracy": 0.4827414949093618,
+          "confidence": 0.3646663427352905
+        },
+        {
+          "lower": 0.4,
+          "n": 6189,
+          "accuracy": 0.5160769106479237,
+          "confidence": 0.4314270615577698
+        },
+        {
+          "lower": 0.4666666666666667,
+          "n": 3719,
+          "accuracy": 0.5797257327238505,
+          "confidence": 0.49660319089889526
+        },
+        {
+          "lower": 0.5333333333333333,
+          "n": 2379,
+          "accuracy": 0.6847414880201765,
+          "confidence": 0.5640166997909546
+        },
+        {
+          "lower": 0.6,
+          "n": 1515,
+          "accuracy": 0.7755775577557755,
+          "confidence": 0.6311693787574768
+        },
+        {
+          "lower": 0.6666666666666666,
+          "n": 959,
+          "accuracy": 0.8477580813347236,
+          "confidence": 0.6986179351806641
+        },
+        {
+          "lower": 0.7333333333333333,
+          "n": 458,
+          "accuracy": 0.8842794759825328,
+          "confidence": 0.7582012414932251
+        },
+        {
+          "lower": 0.8,
+          "n": 81,
+          "accuracy": 0.8765432098765432,
+          "confidence": 0.82749342918396
+        },
+        {
+          "lower": 0.8666666666666667,
+          "n": 25,
+          "accuracy": 0.84,
+          "confidence": 0.8975908756256104
+        },
+        {
+          "lower": 0.9333333333333333,
+          "n": 5,
+          "accuracy": 0.8,
+          "confidence": 0.9426311254501343
+        }
+      ]
+    },
+    "after": {
+      "ece": 0.020784956330317073,
+      "nll": 1.3937681913375854,
+      "bins": [
+        {
+          "lower": 0.13333333333333333,
+          "n": 10,
+          "accuracy": 0.0,
+          "confidence": 0.18919889628887177
+        },
+        {
+          "lower": 0.2,
+          "n": 1211,
+          "accuracy": 0.250206440957886,
+          "confidence": 0.24931001663208008
+        },
+        {
+          "lower": 0.26666666666666666,
+          "n": 8634,
+          "accuracy": 0.30460968264998844,
+          "confidence": 0.3077388107776642
+        },
+        {
+          "lower": 0.3333333333333333,
+          "n": 13302,
+          "accuracy": 0.39918809201623817,
+          "confidence": 0.36422640085220337
+        },
+        {
+          "lower": 0.4,
+          "n": 7646,
+          "accuracy": 0.45435521841485743,
+          "confidence": 0.43199726939201355
+        },
+        {
+          "lower": 0.4666666666666667,
+          "n": 6275,
+          "accuracy": 0.4742629482071713,
+          "confidence": 0.4976334869861603
+        },
+        {
+          "lower": 0.5333333333333333,
+          "n": 3602,
+          "accuracy": 0.5469183786785119,
+          "confidence": 0.564161479473114
+        },
+        {
+          "lower": 0.6,
+          "n": 3015,
+          "accuracy": 0.6461028192371476,
+          "confidence": 0.6324277520179749
+        },
+        {
+          "lower": 0.6666666666666666,
+          "n": 2250,
+          "accuracy": 0.6795555555555556,
+          "confidence": 0.6979959011077881
+        },
+        {
+          "lower": 0.7333333333333333,
+          "n": 1545,
+          "accuracy": 0.7339805825242719,
+          "confidence": 0.7643746137619019
+        },
+        {
+          "lower": 0.8,
+          "n": 1049,
+          "accuracy": 0.8341277407054337,
+          "confidence": 0.8325685262680054
+        },
+        {
+          "lower": 0.8666666666666667,
+          "n": 531,
+          "accuracy": 0.8775894538606404,
+          "confidence": 0.8914240598678589
+        },
+        {
+          "lower": 0.9333333333333333,
+          "n": 82,
+          "accuracy": 0.8536585365853658,
+          "confidence": 0.9536216259002686
+        }
+      ]
+    }
+  },
+  "training_seconds": 56.60710081000002,
+  "parameters": 66974,
+  "checkpoint": "best.pt",
+  "checkpoint_sha256": "02014fdf42f544013b04ef884cefdcbd063f1d427c578850d1b3d8dd06594d24",
+  "device": "cpu",
+  "torch_version": "2.8.0+cpu"
+}

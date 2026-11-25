@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+data/raw/
+reproduction/
+mlruns/
+mlflow.db*
+experiments/*/last.pt
+.training.lock
+.ipynb_checkpoints/

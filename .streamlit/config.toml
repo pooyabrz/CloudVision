@@ -1,0 +1,13 @@
+[theme]
+base="dark"
+primaryColor="#74D5BC"
+backgroundColor="#0D1824"
+secondaryBackgroundColor="#172838"
+textColor="#E6EEF2"
+[server]
+headless=true
+maxUploadSize=8
+[browser]
+gatherUsageStats=false
+[client]
+toolbarMode="minimal"

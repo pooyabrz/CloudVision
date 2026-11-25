@@ -1,0 +1,20 @@
+{
+  "scene": "2017-01-01T00:00:00Z",
+  "reference": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_land.geojson",
+  "native": {
+    "pixels": 3966,
+    "correct": 3926,
+    "agreement": 0.9899142713061019
+  },
+  "transpose_control": {
+    "pixels": 3966,
+    "correct": 3114,
+    "agreement": 0.7851739788199698
+  },
+  "independent_radiometry": {
+    "product": "GRIDSAT-B1.2017.01.03.00.v02r01.nc",
+    "pixels_compared": 16384,
+    "valid_pixels": 16384,
+    "max_abs_error_kelvin": 0.0
+  }
+}

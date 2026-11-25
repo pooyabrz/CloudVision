@@ -1,0 +1,39 @@
+{
+  "dataset": "cloudcast-gridsat-europe-2017-v1",
+  "year": 2017,
+  "size": 128,
+  "months": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "date_days": [
+    3,
+    7,
+    11,
+    15,
+    19,
+    23,
+    27
+  ],
+  "utc_hours": [
+    0,
+    9,
+    18
+  ],
+  "variable": "irwin_cdr",
+  "units": "K",
+  "projection": "+proj=stere +lat_0=90 +lat_ts=50 +lon_0=5 +ellps=WGS84",
+  "mirror": "https://api.kaggle.com/v1/datasets/download/christianlillelund/the-cloudcast-dataset/",
+  "noaa": "https://www.ncei.noaa.gov/thredds/dodsC/cdr/gridsat",
+  "downsample": "nearest center, source index step//2 + k*step"
+}

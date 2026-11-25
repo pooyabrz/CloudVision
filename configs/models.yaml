@@ -1,0 +1,4 @@
+cnn: {width: 16, dropout: 0.12}
+unet: {width: 12, dropout: 0.10}
+unet_plus: {width: 16, dropout: 0.18}
+segformer: {widths: [12, 24, 40, 64], heads: [1, 2, 4, 4], depths: [1, 1, 1, 1], reductions: [8, 4, 2, 1], decoder: 32, dropout: 0.10}

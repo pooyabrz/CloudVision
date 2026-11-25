@@ -1,0 +1,16 @@
+seed: 42
+epochs: 12
+batch_size: 24
+lr: 0.0015
+optimizer: adamw
+weight_decay: 0.0002
+loss: combined
+dice_fraction: 0.25
+patience: 4
+scheduler_patience: 2
+clip: 2.0
+amp: true
+workers: 0
+threads: 3
+device: auto
+augment: {horizontal: true, vertical: false, rotate: false, crop_probability: 0.2, minimum_crop: 0.8}

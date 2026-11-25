@@ -1,0 +1,4 @@
+tile: 64
+fractions: [0.7, 0.15, 0.15]
+gap_hours: 24
+preprocessing: {version: ir-kelvin-v1, center: 265.0, scale: 25.0, channels: [irwin_cdr_kelvin, valid_observation], valid_range: [150.0, 350.0], ignore: 255}

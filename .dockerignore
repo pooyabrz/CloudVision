@@ -1,0 +1,13 @@
+.git
+.github
+.venv
+**/__pycache__/
+.pytest_cache
+.ruff_cache
+experiments/*/*.pt
+data/processed
+data/raw
+reproduction
+docs/*.mp4
+docs/*.pdf
+notebooks

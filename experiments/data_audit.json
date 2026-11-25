@@ -1,0 +1,98 @@
+{
+  "manifest_sha256": "b20c112dc572bbdbb7a397a9a2add7b5702d983f2f3c94a4fadc7e39cc1216d0",
+  "splits": {
+    "train": {
+      "scenes": 177,
+      "days": 59,
+      "start": "2017-01-03T00:00:00+00:00",
+      "end": "2017-09-11T18:00:00+00:00",
+      "counts": {
+        "Clear land": 594203,
+        "Clear sea": 223475,
+        "Snow over land": 15163,
+        "Sea ice": 115,
+        "Very low cloud": 341284,
+        "Low cloud": 326474,
+        "Mid-level cloud": 344555,
+        "High opaque cloud": 256631,
+        "Very high opaque cloud": 18474,
+        "Fractional cloud": 247320,
+        "Thin semitransparent cloud": 110997,
+        "Moderate semitransparent cloud": 211609,
+        "Thick semitransparent cloud": 138645,
+        "Semitransparent above low or mid cloud": 71011
+      },
+      "ignored": 12
+    },
+    "val": {
+      "scenes": 36,
+      "days": 12,
+      "start": "2017-09-15T00:00:00+00:00",
+      "end": "2017-11-03T18:00:00+00:00",
+      "counts": {
+        "Clear land": 120931,
+        "Clear sea": 39050,
+        "Snow over land": 224,
+        "Sea ice": 1,
+        "Very low cloud": 86316,
+        "Low cloud": 86381,
+        "Mid-level cloud": 59239,
+        "High opaque cloud": 69473,
+        "Very high opaque cloud": 4550,
+        "Fractional cloud": 28718,
+        "Thin semitransparent cloud": 19282,
+        "Moderate semitransparent cloud": 43049,
+        "Thick semitransparent cloud": 20926,
+        "Semitransparent above low or mid cloud": 11684
+      },
+      "ignored": 0
+    },
+    "test": {
+      "scenes": 39,
+      "days": 13,
+      "start": "2017-11-07T00:00:00+00:00",
+      "end": "2017-12-27T18:00:00+00:00",
+      "counts": {
+        "Clear land": 92675,
+        "Clear sea": 26634,
+        "Snow over land": 2760,
+        "Sea ice": 0,
+        "Very low cloud": 93036,
+        "Low cloud": 68950,
+        "Mid-level cloud": 66448,
+        "High opaque cloud": 69560,
+        "Very high opaque cloud": 11058,
+        "Fractional cloud": 44596,
+        "Thin semitransparent cloud": 19497,
+        "Moderate semitransparent cloud": 56396,
+        "Thick semitransparent cloud": 78050,
+        "Semitransparent above low or mid cloud": 9316
+      },
+      "ignored": 0
+    },
+    "embargo": {
+      "scenes": 0,
+      "days": 0,
+      "start": null,
+      "end": null,
+      "counts": {
+        "Clear land": 0,
+        "Clear sea": 0,
+        "Snow over land": 0,
+        "Sea ice": 0,
+        "Very low cloud": 0,
+        "Low cloud": 0,
+        "Mid-level cloud": 0,
+        "High opaque cloud": 0,
+        "Very high opaque cloud": 0,
+        "Fractional cloud": 0,
+        "Thin semitransparent cloud": 0,
+        "Moderate semitransparent cloud": 0,
+        "Thick semitransparent cloud": 0,
+        "Semitransparent above low or mid cloud": 0
+      },
+      "ignored": 0
+    }
+  },
+  "gap_hours": 24
+}
